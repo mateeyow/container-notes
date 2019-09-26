@@ -7,7 +7,7 @@ Check out [configmap](/configmap) folder for example
   
   1. Create a configmap file
 
-```javascript
+```yaml
  ...
 data:
   config: |-
@@ -34,5 +34,26 @@ spec:
       items:
       - key: <key of the configmap>
         path: <filename>
+```
+</details>
+
+## How do I pull a private docker image?
+Check out [secrets](/secrets) folder for example
+<details>
+  <summary>Click for summary</summary>
+
+  1. Run the following command to create a docker registry secret
+
+```bash
+kubectl create secret docker-registry <name of secret> --docker-server="<docker registry url>" --docker-username="<docker username" --docker-password="<docker password" --docker-email="<docker email>"
+```
+
+  2. And imagePullSecrets config to your yaml file.
+
+```yaml
+...
+spec:
+  imagePullSecrets:
+  - name: <name of secret>
 ```
 </details>
