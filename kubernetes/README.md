@@ -57,3 +57,19 @@ spec:
   - name: <name of secret>
 ```
 </details>
+
+## How do I add labels to namespace and nodes on openshift?
+
+Node label:
+```
+oc label node node1.ubuntu.local app=nodejs
+```
+
+Namespace label:
+```
+oc edit ns ${project name}
+```
+Then add the label under **metadta** > **annotations**
+```
+openshift.io/node-selector: app=ocgocd
+```
