@@ -39,7 +39,7 @@ spec:
 
 ## How do you mount a configmap as a file?
 <details>
-  <summary>Click for summary</summary>
+  <summary>Click for answer</summary>
   
   1. Create a configmap file
 
